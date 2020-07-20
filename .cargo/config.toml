@@ -4,4 +4,4 @@ rustflags = ["--cfg", "wasmedge", "--cfg", "tokio_unstable"]
 
 
 [target.wasm32-wasi]
-runner = "
+runner = "wasmedge"

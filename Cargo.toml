@@ -1,0 +1,10 @@
+
+[package]
+name = "github-pr-review"
+version = "0.1.0"
+edition = "2021"
+
+[patch.crates-io]
+tokio = { git = "https://github.com/second-state/wasi_tokio.git", branch = "v1.36.x" }
+socket2 = { git = "https://github.com/second-state/socket2.git", branch = "v0.5.x" }
+hyper = { git = "https://github.com/second-state/wasi_hyper.git", branch = "v0.14.x" }

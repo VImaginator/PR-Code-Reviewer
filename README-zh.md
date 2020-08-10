@@ -6,4 +6,5 @@
 
 # <p align="center">ChatGPT/4 GitHub PR 代码检查机器人</p>
 
-<p alig
+<p align="center">
+ 

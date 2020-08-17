@@ -8,4 +8,4 @@
 
 <p align="center">
   <a href="https://discord.gg/ccZn9ZMfFf">
-    <im
+    <img src="https://i

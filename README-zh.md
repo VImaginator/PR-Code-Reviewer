@@ -11,4 +11,4 @@
     <img src="https://img.shields.io/badge/chat-Discord-7289DA?logo=discord" alt="flows.network Discord">
   </a>
   <a href="https://twitter.com/flows_network">
-    <img src="https://i
+    <img src="https://img.shields.io/badge

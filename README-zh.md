@@ -14,4 +14,4 @@
     <img src="https://img.shields.io/badge/Twitter-1DA1F2?logo=twitter&amp;logoColor=white" alt="flows.network Twitter">
   </a>
    <a href="https://flows.network/flow/createByTemplate/code-review-for-github-pull-requests">
-    <img src="https://img.shields.io/website?up_messag
+    <img src="https://img.shields.io/website?up_message=deploy&url=https

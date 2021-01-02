@@ -18,4 +18,4 @@
   </a>
 </p>
 
-[部署此函数到 flows.network]
+[部署此函数到 flows.network](#deploy-your-own-c

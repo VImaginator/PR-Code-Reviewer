@@ -18,4 +18,4 @@
   </a>
 </p>
 
-[部署此函数到 flows.network](#deploy-your-own-code-review-bot-i
+[部署此函数到 flows.network](#deploy-your-own-code-review-bot-in-3-simple-steps)，你

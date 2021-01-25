@@ -18,4 +18,4 @@
   </a>
 </p>
 
-[部署此函数到 flows.network](#deploy-your-own-code-review-bot-in-3-simple-steps)，你将获得一个帮你检查代码和总结拉取请求的 
+[部署此函数到 flows.network](#deploy-your-own-code-review-bot-in-3-simple-steps)，你将获得一个帮你检查代码和总结拉取请求的 GitHub 机器人。它可以帮助

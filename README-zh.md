@@ -22,4 +22,6 @@
 
 * [[C++] 优化 WasmEdge C++ SDK](https://github.com/WasmEdge/WasmEdge/pull/2428#issuecomment-1524733889)
 * [[C++] 为 WasmEdge 创建 OpenCV plugin](https://github.com/WasmEdge/WasmEdge/pull/2403#issuecomment-1509595889)
-* [[Haskell] 优化 WasmEdge Component Model tooling](https://github.com/second-state/witc/pull/73#issuecomment-15
+* [[Haskell] 优化 WasmEdge Component Model tooling](https://github.com/second-state/witc/pull/73#issuecomment-1509586233)
+
+该机器人可以检

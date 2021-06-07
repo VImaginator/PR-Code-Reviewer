@@ -24,4 +24,4 @@
 * [[C++] 为 WasmEdge 创建 OpenCV plugin](https://github.com/WasmEdge/WasmEdge/pull/2403#issuecomment-1509595889)
 * [[Haskell] 优化 WasmEdge Component Model tooling](https://github.com/second-state/witc/pull/73#issuecomment-1509586233)
 
-该机器人可以检查 PR 中更改的文件。 或者，可以使用[这个 bot](https://github.com/flows-n
+该机器人可以检查 PR 中更改的文件。 或者，可以使用[这个 bot](https://github.com/flows-network/github

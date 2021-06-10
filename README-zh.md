@@ -26,4 +26,6 @@
 
 该机器人可以检查 PR 中更改的文件。 或者，可以使用[这个 bot](https://github.com/flows-network/github-pr-summary) 来总结 PR 中提交的信息。
 
-#
+## 如何工作
+
+当在指定的 Git

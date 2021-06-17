@@ -28,4 +28,4 @@
 
 ## 如何工作
 
-当在指定的 GitHub repo 中提出
+当在指定的 GitHub repo 中提出新的 PR 时，将触发此 flow 函

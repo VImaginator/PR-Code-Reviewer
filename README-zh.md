@@ -28,4 +28,4 @@
 
 ## 如何工作
 
-当在指定的 GitHub repo 中提出新的 PR 时，将触发此 flow 函数（或🤖）。 flow 函数收集 PR 中的更改文件，并让 ChatGPT/4 对其
+当在指定的 GitHub repo 中提出新的 PR 时，将触发此 flow 函数（或🤖）。 flow 函数收集 PR 中的更改文件，并让 ChatGPT/4 对其进行检查和总结。 然后将结果作为评论发

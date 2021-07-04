@@ -30,4 +30,5 @@
 
 当在指定的 GitHub repo 中提出新的 PR 时，将触发此 flow 函数（或🤖）。 flow 函数收集 PR 中的更改文件，并让 ChatGPT/4 对其进行检查和总结。 然后将结果作为评论发回 PR。 flow 函数是用 Rust 编写的，并在 [flows.network](https://flows.network/) 上在托管的 [WasmEdge Runtimes](https://github.com/wasmedge) 中运行。
 
-* 每次将新的提交推送到此 PR 时，都会
+* 每次将新的提交推送到此 PR 时，都会自动更新代码检查评论。
+* 当有

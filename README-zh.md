@@ -41,4 +41,4 @@
 
 ### 0 事前准备
 
-需要使用自己的 [OpenAI API 密钥](
+需要使用自己的 [OpenAI API 密钥](https://op

@@ -43,4 +43,4 @@
 
 需要使用自己的 [OpenAI API 密钥](https://openai.com/blog/openai-api)。如果还没有密钥，请[在此处注册](https://platform.openai.com/signup)。
 
-还需要使用你的 GitHub 帐户
+还需要使用你的 GitHub 帐户登录 [flows.networ

@@ -49,4 +49,4 @@
 
 [**单击此处**](https://flows.network/flow/createByTemplate/Code-Review-Pull-Request)
 
-请检查 `trigger_phras
+请检查 `trigger_phrase` 变量。这是你在 PR 评论中手动召唤

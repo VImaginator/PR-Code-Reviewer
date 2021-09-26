@@ -53,4 +53,6 @@
 
 单击 **Create and Build** 按钮。
 
-##
+### 2 添加你的 OpenAI API 密钥
+
+现在你将

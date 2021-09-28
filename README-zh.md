@@ -55,4 +55,4 @@
 
 ### 2 添加你的 OpenAI API 密钥
 
-现在你将设置 OpenAI int
+现在你将设置 OpenAI integration。单击**连接**，输

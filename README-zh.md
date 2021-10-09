@@ -57,4 +57,4 @@
 
 现在你将设置 OpenAI integration。单击**连接**，输入您的密钥并为其命名。
 
-[<img width=
+[<img width="450" alt="image" src="h

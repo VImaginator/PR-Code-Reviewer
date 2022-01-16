@@ -72,4 +72,4 @@
 
 点击 **Connect** 或 **+ Add new authentication** 按钮，以使函数可以访问 GitHub repo 并部署🤖️。你将被重定向到一个新页面，在此页面须授予 [flows.network](https://flows.network/) 对该 repo 的权限。
 
-[<img wid
+[<img width="450" alt="i

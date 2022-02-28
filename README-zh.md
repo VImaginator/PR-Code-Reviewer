@@ -74,4 +74,6 @@
 
 [<img width="450" alt="image" src="https://github.com/flows-network/github-pr-summary/assets/45785633/6cefff19-9eeb-4533-a20b-03c6a9c89473">](https://github.com/flows-network/github-pr-summary/assets/45785633/6cefff19-9eeb-4533-a20b-03c6a9c89473)
 
-完成后请关闭标签页并返回 flow.network 页面。点击 **Deplo
+完成后请关闭标签页并返回 flow.network 页面。点击 **Deploy**.
+
+### 等待魔法的到

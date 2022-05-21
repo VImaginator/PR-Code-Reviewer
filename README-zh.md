@@ -88,4 +88,6 @@
 
 机器人的源代码可在你从模板克隆的 GitHub repo 中找到。请根据自己的需求任意更改源代码（例如，模型、上下文长度、API 密钥和提示）。如果需要帮助，请在 [Discord 中询问](https://discord.gg/ccZn9ZMfFf)！
 
-### Use GPT
+### Use GPT4
+
+默认情况下，该机器人使用 GP

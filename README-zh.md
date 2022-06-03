@@ -90,4 +90,4 @@
 
 ### Use GPT4
 
-默认情况下，该机器人使用 GPT3.5 进行代码检查。如果你的 OpenAI API 密钥可以访问 GPT4，则可以在克隆的源代码 repo 中打开 `src/github-pr-review.rs` 文件，并在源代码中将
+默认情况下，该机器人使用 GPT3.5 进行代码检查。如果你的 OpenAI API 密钥可以访问 GPT4，则可以在克隆的源代码 repo 中打开 `src/github-pr-review.rs` 文件，并在源代码中将 `GPT35Turbo` 更改为 `GP

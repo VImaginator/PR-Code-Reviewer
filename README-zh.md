@@ -95,4 +95,4 @@ flows.network 平台将自动检测并从你的更新的源代码重建机器人
 
 ### 在多个 repo 上使用机器人
 
-你可以手动[创建一个新的 flow](https://flows.network/flow/new)，并导入机器人的源代码 repo（即你从模板克隆的 repo）。然后，可以使用 flow config 来指定 `github_
+你可以手动[创建一个新的 flow](https://flows.network/flow/new)，并导入机器人的源代码 repo（即你从模板克隆的 repo）。然后，可以使用 flow config 来指定 `github_owner` 和 `github_repo

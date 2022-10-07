@@ -110,4 +110,4 @@ flows.network 平台将自动检测并从你的更新的源代码重建机器人
 此 flow 函数最初由 [Jay Chen](https://github.com/jaykchen) 创建，[jinser](https://github.com/jetjinser) 为优化来自 GitHub 的事件触发器做出了重大贡献。
 
 <p align="center">
-<a href="https://www.producthunt.com/posts/gpt-nitro-for-github-pr?ut
+<a href="https://www.producthunt.com/posts/gpt-nitro-for-github-pr?utm_source=badge-feature

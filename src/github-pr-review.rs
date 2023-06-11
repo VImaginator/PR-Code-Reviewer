@@ -10,3 +10,19 @@ use github_flows::{
 };
 use llmservice_flows::{
     chat::{ChatOptions},
+    LLMServiceFlows,
+};
+use std::env;
+
+#[no_mangle]
+#[tokio::main(flavor = "current_thread")]
+pub async fn on_deploy() {
+    dotenv().ok();
+    logger::init();
+    log::debug!("Running github-pr-review/main");
+
+    let owner = env::var("github_owner").unwrap_or("juntao".to_string());
+    let repo = env::var("github_repo").unwrap_or("test".to_string());
+
+    listen_to_event(&GithubLogin::Default, &owner, &repo, vec!["pull_request", "issue_comment"]).await;
+}

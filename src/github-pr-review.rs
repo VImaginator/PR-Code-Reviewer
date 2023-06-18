@@ -71,3 +71,18 @@ async fn handler(event: Result<WebhookEvent, serde_json::Error>) {
                 return;
             }
             log::debug!("Other event for issue comment");
+
+            let body = e.comment.body.unwrap_or_default();
+
+            // if e.comment.performed_via_github_app.is_some() {
+            //     return;
+            // }
+            // TODO: Makeshift but operational
+            if body.starts_with("Hello, I am a [code review agent]") {
+                log::info!("Ignore comment via agent");
+                return;
+            };
+
+            if !body.to_lowercase().starts_with(&trigger_phrase.to_lowercase()) {
+                log::info!("Ignore the comment without magic words");
+                return;

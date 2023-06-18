@@ -51,3 +51,23 @@ async fn handler(event: Result<WebhookEvent, serde_json::Error>) {
         WebhookEventPayload::PullRequest(e) => {
             if e.action == PullRequestWebhookEventAction::Opened {
                 log::debug!("Received payload: PR Opened");
+            } else if e.action == PullRequestWebhookEventAction::Synchronize {
+                new_commit = true;
+                log::debug!("Received payload: PR Synced");
+            } else {
+                log::debug!("Not a Opened or Synchronize event for PR");
+                return;
+            }
+            let p = e.pull_request;
+            (
+                p.title.unwrap_or("".to_string()),
+                p.number,
+                p.user.unwrap().login,
+            )
+        }
+        WebhookEventPayload::IssueComment(e) => {
+            if e.action == IssueCommentWebhookEventAction::Deleted {
+                log::debug!("Deleted issue comment");
+                return;
+            }
+            log::debug!("Other event for issue comment");

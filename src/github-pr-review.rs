@@ -86,3 +86,18 @@ async fn handler(event: Result<WebhookEvent, serde_json::Error>) {
             if !body.to_lowercase().starts_with(&trigger_phrase.to_lowercase()) {
                 log::info!("Ignore the comment without magic words");
                 return;
+            }
+
+            (e.issue.title, e.issue.number, e.issue.user.login)
+        }
+        _ => return,
+    };
+
+    let chat_id = format!("PR#{pull_number}");
+    let system = &format!("You are an experienced software developer. You will review a source code file and its patch related to the subject of \"{}\". Please be as concise as possible while being accurate.", title);
+    let mut lf = LLMServiceFlows::new(&llm_api_endpoint);
+    lf.set_api_key(&llm_api_key);
+
+    let octo = get_octo(&GithubLogin::Default);
+    let issues = octo.issues(owner.clone(), repo.clone());
+    let mut comment_id: CommentId = 0u64.into();

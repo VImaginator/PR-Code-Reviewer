@@ -112,3 +112,24 @@ async fn handler(event: Result<WebhookEvent, serde_json::Error>) {
                     }
                 }
             }
+            Err(error) => {
+                log::error!("Error getting comments: {}", error);
+                return;
+            }
+        }
+    } else {
+        // PR OPEN or Trigger phrase: create a new comment
+        match issues.create_comment(pull_number, "Hello, I am a [code review agent](https://github.com/flows-network/github-pr-review/) on [flows.network](https://flows.network/).\n\nIt could take a few minutes for me to analyze this PR. Relax, grab a cup of coffee and check back later. Thanks!").await {
+            Ok(comment) => {
+                comment_id = comment.id;
+            }
+            Err(error) => {
+                log::error!("Error posting comment: {}", error);
+                return;
+            }
+        }
+    }
+    if comment_id == 0u64.into() { return; }
+
+    let pulls = octo.pulls(owner.clone(), repo.clone());
+    let mut resp = String::new();

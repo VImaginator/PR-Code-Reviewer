@@ -101,3 +101,14 @@ async fn handler(event: Result<WebhookEvent, serde_json::Error>) {
     let octo = get_octo(&GithubLogin::Default);
     let issues = octo.issues(owner.clone(), repo.clone());
     let mut comment_id: CommentId = 0u64.into();
+    if new_commit {
+        // Find the first "Hello, I am a [code review agent]" comment to update
+        match issues.list_comments(pull_number).send().await {
+            Ok(comments) => {
+                for c in comments.items {
+                    if c.body.unwrap_or_default().starts_with("Hello, I am a [code review agent]") {
+                        comment_id = c.id;
+                        break;
+                    }
+                }
+            }

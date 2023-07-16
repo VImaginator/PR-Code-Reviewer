@@ -133,3 +133,26 @@ async fn handler(event: Result<WebhookEvent, serde_json::Error>) {
 
     let pulls = octo.pulls(owner.clone(), repo.clone());
     let mut resp = String::new();
+    resp.push_str("Hello, I am a [code review agent](https://github.com/flows-network/github-pr-review/) on [flows.network](https://flows.network/). Here are my reviews of changed source code files in this PR.\n\n------\n\n");
+    match pulls.list_files(pull_number).await {
+        Ok(files) => {
+            // let client = reqwest::Client::new();
+            for f in files.items {
+                let filename = &f.filename;
+                if filename.ends_with(".md") || filename.ends_with(".js") || filename.ends_with(".css") || filename.ends_with(".html") || filename.ends_with(".htm") {
+                    continue;
+                }
+
+                // The f.raw_url is a redirect. So, we need to construct our own here.
+                let contents_url = f.contents_url.as_str();
+                if contents_url.len() < 40 { continue; }
+                let hash = &contents_url[(contents_url.len() - 40)..];
+                let raw_url = format!(
+                    "https://raw.githubusercontent.com/{owner}/{repo}/{}/{}", hash, filename
+                );
+
+                log::debug!("Fetching url: {}", raw_url);
+                let res = match reqwest::get(raw_url.as_str()).await {
+                    Ok(r) => r,
+                    Err(e) => {
+                        log::error!("Error fetching file {}: {}", filename, e);

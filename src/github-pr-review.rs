@@ -156,3 +156,20 @@ async fn handler(event: Result<WebhookEvent, serde_json::Error>) {
                     Ok(r) => r,
                     Err(e) => {
                         log::error!("Error fetching file {}: {}", filename, e);
+                        continue;
+                    }
+                };
+                // let res = reqwest::get(raw_url.as_str()).await.unwrap();
+                // let res = client.get(raw_url.as_str()).send().await.unwrap();
+                log::debug!("Fetched file: {}", filename);
+                let file_as_text = res.text().await.unwrap();
+                let t_file_as_text = truncate(&file_as_text, ctx_size_char);
+
+                resp.push_str("## [");
+                resp.push_str(filename);
+                resp.push_str("](");
+                resp.push_str(f.blob_url.as_str());
+                resp.push_str(")\n\n");
+
+                log::debug!("Sending file to LLM: {}", filename);
+                let co = ChatOptions {

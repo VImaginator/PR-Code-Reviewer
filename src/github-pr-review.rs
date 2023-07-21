@@ -173,3 +173,15 @@ async fn handler(event: Result<WebhookEvent, serde_json::Error>) {
 
                 log::debug!("Sending file to LLM: {}", filename);
                 let co = ChatOptions {
+                    model: Some(&llm_model_name),
+                    token_limit: llm_ctx_size,
+                    restart: true,
+                    system_prompt: Some(system),
+                    ..Default::default()
+                };
+                let question = "Review the following source code and report only major bugs or issues. The most important coding issues should be reported first. You should report NO MORE THAN 3 issues. Be very concise and explain each coding issue in one sentence. The code might be truncated. NEVER comment on the completeness of the source code.\n\n".to_string() + t_file_as_text;
+                match lf.chat_completion(&chat_id, &question, &co).await {
+                    Ok(r) => {
+                        resp.push_str("#### Potential issues");
+                        resp.push_str("\n\n");
+                        resp.push_str(&r.choice);

@@ -215,3 +215,18 @@ async fn handler(event: Result<WebhookEvent, serde_json::Error>) {
                         resp.push_str(&r.choice);
                         resp.push_str("\n\n");
                         log::debug!("Received LLM resp for patch: {}", filename);
+                    }
+                    Err(e) => {
+                        resp.push_str("#### Summary of changes");
+                        resp.push_str("\n\n");
+                        resp.push_str("N/A");
+                        resp.push_str("\n\n");
+                        log::error!("LLM returns error for patch review for {}: {}", filename, e);
+                    }
+                }
+            }
+        },
+        Err(_error) => {
+            log::error!("Cannot get file list");
+        }
+    }

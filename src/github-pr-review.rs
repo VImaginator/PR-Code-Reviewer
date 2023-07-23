@@ -230,3 +230,20 @@ async fn handler(event: Result<WebhookEvent, serde_json::Error>) {
             log::error!("Cannot get file list");
         }
     }
+
+    // Send the entire response to GitHub PR
+    // issues.create_comment(pull_number, resp).await.unwrap();
+    match issues.update_comment(comment_id, resp).await {
+        Err(error) => {
+            log::error!("Error posting resp: {}", error);
+        }
+        _ => {}
+    }
+}
+
+fn truncate(s: &str, max_chars: usize) -> &str {
+    match s.char_indices().nth(max_chars) {
+        None => s,
+        Some((idx, _)) => &s[..idx],
+    }
+}

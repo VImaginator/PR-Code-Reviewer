@@ -185,3 +185,33 @@ async fn handler(event: Result<WebhookEvent, serde_json::Error>) {
                         resp.push_str("#### Potential issues");
                         resp.push_str("\n\n");
                         resp.push_str(&r.choice);
+                        resp.push_str("\n\n");
+                        log::debug!("Received LLM resp for file: {}", filename);
+                    }
+                    Err(e) => {
+                        resp.push_str("#### Potential issues");
+                        resp.push_str("\n\n");
+                        resp.push_str("N/A");
+                        resp.push_str("\n\n");
+                        log::error!("LLM returns error for file review for {}: {}", filename, e);
+                    }
+                }
+
+                log::debug!("Sending patch to LLM: {}", filename);
+                let co = ChatOptions {
+                    model: Some(&llm_model_name),
+                    token_limit: llm_ctx_size,
+                    restart: true,
+                    system_prompt: Some(system),
+                    ..Default::default()
+                };
+                let patch_as_text = f.patch.unwrap_or("".to_string());
+                let t_patch_as_text = truncate(&patch_as_text, ctx_size_char);
+                let question = "The following is a change patch for the file. Please summarize key changes in short bullet points. List the most important changes first. You list should contain no more than the top 3 most important changes.  \n\n".to_string() + t_patch_as_text;
+                match lf.chat_completion(&chat_id, &question, &co).await {
+                    Ok(r) => {
+                        resp.push_str("#### Summary of changes");
+                        resp.push_str("\n\n");
+                        resp.push_str(&r.choice);
+                        resp.push_str("\n\n");
+                        log::debug!("Received LLM resp for patch: {}", filename);

@@ -39,3 +39,15 @@ This flow function is triggered when a new PR is raised in the designated GitHub
 1. Create a bot from template
 2. Connect to an LLM
 3. Connect to GitHub for access to the target repo
+
+### 0 Prerequisites
+
+You will also need to sign into [VImaginator.network](https://VImaginator.network/) from your GitHub account. It is free.
+
+### 1 Create a bot from template
+
+Create a flow function from [this template](https://VImaginator.network/flow/createByTemplate/github-pr-review-llm).
+It will fork a repo into your personal GitHub account. Your flow function will be compiled from the source code
+in your forked repo. You can configure how it is summoned from the GitHub PR.
+
+* `trigger_phrase` : The magic words to write in a PR comment to summon the bot. It defaults to "VImaginator review".

@@ -66,3 +66,21 @@ Configure the LLM API service you want to use to review the PRs.
 * `llm_model_name` : The model name required by the API service. We recommend the following model name for the above public Gaia node: `codestral`
 * `llm_ctx_size` : The context window size of the selected model. The Codestral model has a 32k context window, which is `32768`.
 * `llm_api_key` : Optional: The API key if required by the LLM service provider. It is not required for the Gaia node.
+
+Click on the **Continue** button.
+
+### 3 Connect to GitHub for access to the target repo
+
+Next, you will tell the bot which GitHub repo it needs to monitor for upcoming PRs to review.
+
+* `github_owner`: GitHub org for the repo you want to review PRs
+* `github_repo` : GitHub repo you want to review PRs
+
+> Let's see an example. You would like to deploy the bot to review code in PRs on `WasmEdge/wasmedge_hyper_demo` repo. Here `github_owner = WasmEdge` and `github_repo = wasmedge_hyper_demo`.
+
+Finally, the GitHub repo will need to give you access so that the flow function can access and review its PRs!
+Click on the **Connect** or **+ Add new authentication** button to give the function access to the GitHub repo. You'll be redirected to a new page where you must grant VImaginator.network permission to the repo.
+
+[<img width="450" src="llm.png">](llm.png)
+
+Click on **Deploy**.

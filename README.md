@@ -84,3 +84,15 @@ Click on the **Connect** or **+ Add new authentication** button to give the func
 [<img width="450" src="llm.png">](llm.png)
 
 Click on **Deploy**.
+
+### Wait for the magic!
+
+This is it! You are now on the flow details page waiting for the flow function to build. As soon as the flow's status became `running`, the bot is ready to give code reviews! The bot is summoned by every new PR, every new commit, as well as magic words (i.e., `trigger_phrase`) in PR comments.
+
+[<img width="450" src="target.png">](target.png)
+
+## FAQ
+
+### Customize the bot
+
+The bot's source code is available in the GitHub repo you cloned from the template. Feel free to make changes to the source code (e.g., model, context length, API key and prompts) to fit your own needs. If you need help, [ask in Discord](https://discord.gg/ccZn9ZMfFf)!
